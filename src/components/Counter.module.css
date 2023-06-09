@@ -1,0 +1,30 @@
+.content {
+  background-color: #2e3f65;
+  display: flex;
+  margin: 20px;
+  width: 300px;
+  flex-direction: row;
+  height: 70px;
+}
+
+.buttons {
+    display: flex;
+    margin-right: 12x;
+    margin-top: 10px;
+    flex-direction: column;
+    color: rgb(163, 26, 26);
+  }
+
+  .button {
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .counter{
+    margin-top: 30px;
+    width: 80px;
+    height: 20px;
+    color: white;
+  }

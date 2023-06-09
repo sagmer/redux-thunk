@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+
+import "./App.css";
+import Counter from "./components/Counter";
+import StatusBar from "./components/StatusBar"
 
 function App() {
+  const counter= useSelector(state=>state.counter)
+  const notification = useSelector(state=>state.notification)
+  useEffect(() => {
+    const sendRequest = async () => {
+      await fetch(
+        "https://mediumprojects-f255b-default-rtdb.firebaseio.com/counter.json",
+        {
+          method: "PUT",
+          body: JSON.stringify(counter),
+        }
+      );
+    };
+    sendRequest();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter />
+      <StatusBar status={notification.status} />
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.status {
+    width: 120px;
+    height: 20px;
+    background-color: rgb(157, 157, 190);
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-left: 105px;
+}
