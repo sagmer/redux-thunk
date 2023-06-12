@@ -1,7 +1,7 @@
 import classes from "./Counter.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { changeCounter, counterActions } from "../store/counter-slice";
+import { changeCounter } from "../store/counter-slice";
 
 const Counter = (props) => {
   const counter = useSelector((state) => state.counter);
@@ -12,7 +12,7 @@ const Counter = (props) => {
         <button
           className={classes.button}
           onClick={() => {
-            dispatch(changeCounter(counter.value+1, "inc"));
+            dispatch(changeCounter(counter.value + 1, "inc"));
           }}
         >
           increment
@@ -20,7 +20,7 @@ const Counter = (props) => {
         <button
           className={classes.button}
           onClick={() => {
-            dispatch(changeCounter(counter.value-1, "dec"));
+            dispatch(changeCounter(counter.value - 1, "dec"));
           }}
         >
           decrement

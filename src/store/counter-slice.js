@@ -29,7 +29,7 @@ export const changeCounter = (val, type) => {
         }
       );
       if (!response.ok) {
-        throw new Error("Sending cart data failed.");
+        throw new Error("Sending counter value failed.");
       }
     };
     try {
